@@ -1,0 +1,1021 @@
+﻿<<< SimplySerial v0.9.0 connected via COM12 >>>
+Settings  : 115200 baud, no parity, 8 data bits, 1 stop bit, UTF-8 encoding, auto-connect on, echo off
+Device    : VID:0403 PID:6001
+Logfile   : zte-mf920u_boot.log (Mode = OVERWRITE)
+---
+
+Use CTRL-X to exit.
+
+
+MODE:SPI NAND
+flag bypass
+
+
+U-Boot 2011.09 (Dec 10 2021 - 15:31:08) for ZXIC
+
+U-Boot code: 0x27EF0000 -> 0x27F798D0  BSS: -> 0x27F84EBC
+
+CPU:     ZX297520V3
+Board: ZX297520V3
+monitor len: 0x00100000
+ramsize: 0x08000000
+TLB table at: 0x27ff0000
+Top of RAM usable for U-Boot at: 0x27ff0000
+Reserving 1024k for U-Boot at: 0x27ef0000
+Reserving 16k for nand dma buffer at: 0x27eec000
+Reserving 2080k for malloc() at: 0x27ce4000
+Reserving 24 Bytes for Board Info at: 0x27ce3fe8
+Reserving 120 Bytes for Global Data at: 0x27ce3f70
+New Stack Pointer is: 0x27ce3f60
+RAM Configuration:
+Bank #0: 0x20000800 128 MiB
+relocation Offset is: 0x00000000
+dram_bank_mmu_setup: bank: 0
+monitor flash len: 0x000898D0
+Now running in RAM - U-Boot at: 0x27EF0000
+Using default environment
+
+Destroy Hash Table: 27f79dd4 table = (null)
+Create Hash Table: N=91
+DELETE CANDIDATE: "bootargs"
+hdelete: DELETE key "bootargs"
+DELETE ERROR ##############################
+INSERT: free(data = 27ce8008)
+INSERT: done
+In:    serial
+Out:   serial
+Err:   serial
+[UBOOT]NOTICE->[sys_entry]<703>sys_entry ...
+[UBOOT]NOTICE->[uboot_init_func]<643>go into uboot init func
+[sys_entry_wdt]: watchdog no reset!
+[UBOOT]NOTICE->[uboot_init_func]<656>uboot init wdt_reboot success
+[UBOOT]NOTICE->[uboot_init_func]<656>uboot init dma success
+[UBOOT]NOTICE->[uboot_init_func]<656>uboot init i2c success
+        [zx234290_get_boot_reason_prev][START_UP_STATUS = 0x1] ...
+        [zx234290_get_boot_reason_prev][USER_RESERVED   = 0x0] ...
+[UBOOT]NOTICE->[uboot_init_func]<656>uboot init peri success
+spi-nand
+[SPI-NAND]: maf_id = 0xc8
+[SPI-NAND]: dev_id = 0x11
+[SPI-NAND][A0] = 0x0
+[SPI-NAND][B0] = 0x10
+Bad block table found at page 65472, version 0x01
+Bad block table found at page 65408, version 0x01
+[UBOOT]NOTICE->[nand_init]<167>128 MiB.
+[UBOOT]NOTICE->[uboot_init_func]<656>uboot init nand success
+[UBOOT]NOTICE->[uboot_init_func]<656>uboot init partition success
+zftl mount [nvro] success.
+zftl mount [nvrw] success.
+zftl mount [fotaflag] success.
+[UBOOT]ERR->[zftl_init]<688>CanNOT find the partition [-ramdisk-]! ignored
+zftl mount [nvfac] success.
+zftl mount [sms] success.
+zftl mount [cdrom] success.
+[UBOOT]ERR->[zftl_init]<688>CanNOT find the partition [-simnv-]! ignored
+[UBOOT]ERR->[zftl_init]<688>CanNOT find the partition [-simnvfac-]! ignored
+[UBOOT]NOTICE->[uboot_init_func]<656>uboot init zftl success
+    [zftl_read]  nand->read( -0x8a8440-, -0x5-)
+
+[UBOOT]NOTICE->[uboot_init_func]<656>uboot init gmac success
+[UBOOT]NOTICE->[uboot_init_func]<656>uboot init test success
+[UBOOT]NOTICE->[efuse_get_data]<146>secure_flag!=0xFF, SecureVerify->Disable.
+[UBOOT]NOTICE->[uboot_init_func]<656>uboot init efuse success
+[UBOOT]NOTICE->[boot_reason_init]<279>VALUE = 0xef0eef3d!
+    [zftl_read]  nand->read( -0x701000-, -0x1-)
+
+    [zftl_read]  nand->read( -0x701001-, -0x1-)
+
+
+
+[UBOOT]NOTICE->[boot_reason_init]<389>poweron_type=0x0.
+[UBOOT]NOTICE->[uboot_init_func]<656>uboot init boot_reason success
+[UBOOT]NOTICE->[uboot_init_func]<656>uboot init wdt success
+[UBOOT]NOTICE->[get_battery_detect_flag]<443>part offset = 0x600000
+    [zftl_read]  nand->read( -0x714d00-, -0x1-)
+
+[UBOOT]NOTICE->[get_battery_detect_flag]<454>batdetcet_flag=0xff.
+[UBOOT]NOTICE->[get_battery_detect_flag]<484> battery_det_flag=1
+adc2 get adc,break num =1 ...
+adc1 get adc,break num =1 ...
+[UBOOT]NOTICE->[uboot_init_func]<656>uboot init bat_det success
+[UBOOT]NOTICE->[uboot_init_func]<656>uboot init boot_prepare success
+[UBOOT]NOTICE->[boot_entry]<590>Normal entry!
+
+[UBOOT]NOTICE->[load_zsp_image]<680>[cpuzsp] [size=0x3d1c74] from [0xa00000] to [0x25000000]
+[UBOOT]NOTICE->[load_zsp_image]<702>[loading...] -------------------- takes [21385] us.
+[UBOOT]NOTICE->[reform_zsp_image]<182>move zsp to dest addr start
+[UBOOT]NOTICE->[reform_zsp_image]<203>move zsp to dest addr end
+
+[UBOOT]NOTICE->[load_arm_image_ps]<386>(cpups) Size=0x5580b8, Load From 0x1100000 -> 0x25900000.
+[UBOOT]NOTICE->[load_arm_image_ps]<390>(cpups) CRC Checksum=0x52dcd891.
+[UBOOT]NOTICE->[load_arm_image_ps]<409>(cpups) load image finished
+[UBOOT]NOTICE->[load_arm_image_ps]<425>(cpups) Skip Secure Verify...
+[UBOOT]NOTICE->[arm_image_crc_calc]<145>(cpups)CRC Calculate start
+[UBOOT]NOTICE->[arm_image_crc_calc]<148>(cpups) CRC Calculate Res=0x52dcd891, Size=5603512 Bytes
+[UBOOT]NOTICE->[arm_image_crc_calc]<154>(cpups) CRC Check PASS!
+
+[UBOOT]NOTICE->[load_arm_image_linux]<543>(cpuap) Size=0x36d700, Load From 0x1900000 -> 0x20007fc0.
+[UBOOT]NOTICE->[load_arm_image_linux]<547>(cpuap) CRC Checksum=0x71ba2c50.
+[UBOOT]NOTICE->[load_arm_image_linux]<563>(cpuap)load image finished
+[UBOOT]NOTICE->[load_arm_image_linux]<579>(cpuap) Skip Secure Verify...
+[UBOOT]NOTICE->[arm_image_crc_calc]<145>(cpuap)CRC Calculate start
+[UBOOT]NOTICE->[arm_image_crc_calc]<148>(cpuap) CRC Calculate Res=0x71ba2c50, Size=3593984 Bytes
+[UBOOT]NOTICE->[arm_image_crc_calc]<154>(cpuap) CRC Check PASS!
+### main_loop entered: bootdelay=0
+
+### main_loop: bootcmd=" bootm 0x20007fc0"
+## Current stack ends at 0x27ce3dd0 *  kernel: cmdline image address = 0x20007fc0
+show_boot_progress(1)
+## Booting kernel from Legacy Image at 20007fc0 ...
+show_boot_progress(2)
+show_boot_progress(3)
+   Image Name:   Linux-3.4.110
+   Image Type:   ARM Linux Kernel Image (uncompressed)
+   Data Size:    3593984 Bytes = 3.4 MiB
+   Load Address: 20008000
+   Entry Point:  20008000
+   Verifying Checksum ... len = 36d700,dcrc = 71ba2c50,cal=71ba2c50
+OK
+show_boot_progress(4)
+show_boot_progress(5)
+show_boot_progress(6)
+   kernel data at 0x20008000, len = 0x0036d700 (3593984)
+show_boot_progress(14)
+## No init Ramdisk
+   ramdisk start = 0x00000000, ramdisk end = 0x00000000
+@@@entry bootm_load_os uncompressing@@@
+   XIP Kernel Image ... OK
+OK
+   kernel loaded at 0x20008000, end = 0x20375700
+show_boot_progress(7)
+images.os.start = 0x20007FC0, images.os.end = 0x20375700
+images.os.load = 0x20008000, load_end = 0x20375700
+show_boot_progress(8)
+show_boot_progress(15)
+## Transferring control to Linux (at address 20008000) ...
+[UBOOT]NOTICE->[start_other_cores]<998>Starting the arm_r7 ...
+===chiid=0x1d63,boot_params=0x20000100
+
+Starting kernel ...
+Uncompressing Linux... done, booting the kernel.
+[    0.000000] Booting Linux on physical CPU 0
+[    0.000000] Linux version 3.4.110 (SCM@ZTE) (gcc version 4.7.2 (Buildroot 2013.02) ) #2 Fri Dec 10 14:50:01 CST 2021
+[    0.000000] CPU: ARMv7 Processor [410fd034] revision 4 (ARMv7), cr=10c53c7d
+[    0.000000] CPU: PIPT / VIPT nonaliasing data cache, VIPT aliasing instruction cache
+[    0.000000] Machine: ZX297520V3
+[    0.000000] Memory policy: ECC disabled, Data cache writeback
+[    0.000000] softspinlock init success base=0xf83029c0!
+[    0.000000] [CLK] zx29 tsp clk init ok.
+[    0.000000] [PCU] PCU_INIT begin.
+[    0.000000] [PCU] PCU_INIT end.
+[    0.000000] Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 15748
+[    0.000000] Kernel command line: mem=62M console=ttyS1,115200 no_console_suspend mtdparts=spi-nand:512k@0x0(zloader),1m@0x80000(uboot),512k@0x180000(cpurpm),1m@0x200000(uboot-mirr),1m@0x300000(nvfac),2m@0x400000(nvro),3m@0x600000(nvrw),1m@0x900000(fotaflag),6656k@0xa00000(cpuphy),512k@0x1080000(sms),8m@0x1100000(cpups),5m@0x1900000(cpuap),4m@0x1e00000(cpfs),5m@0x2200000(recovery),5m@0x2700000(recovery-kernel),8m@0x2c00000(cdrom),38m@0x3400000(userdata),2m@0x5a00000(yaffs),33m@0x5c00000(zterw) root=ubi0:rootfs ubi.mtd=16 ro rootfstype=ubifs boot_reason=0
+[    0.000000] bootreason_setup: zte_boot_reason = 0xaa
+[    0.000000] PID hash table entries: 256 (order: -2, 1024 bytes)
+[    0.000000] Dentry cache hash table entries: 8192 (order: 3, 32768 bytes)
+[    0.000000] Inode-cache hash table entries: 4096 (order: 2, 16384 bytes)
+[    0.000000] Memory: 62MB = 62MB total
+[    0.000000] Memory: 54796k/54796k available, 8692k reserved, 0K highmem
+[    0.000000] Virtual kernel memory layout:
+[    0.000000]     vector  : 0xffff0000 - 0xffff1000   (   4 kB)
+[    0.000000]     fixmap  : 0xfff00000 - 0xfffe0000   ( 896 kB)
+[    0.000000]     vmalloc : 0xc4000000 - 0xff000000   ( 944 MB)
+[    0.000000]     lowmem  : 0xc0000000 - 0xc3e00000   (  62 MB)
+[    0.000000]     modules : 0xbf000000 - 0xc0000000   (  16 MB)
+[    0.000000]       .text : 0xc0008000 - 0xc06576c4   (6462 kB)
+[    0.000000]       .init : 0xc0658000 - 0xc067d000   ( 148 kB)
+[    0.000000]       .data : 0xc067e000 - 0xc06e2880   ( 403 kB)
+[    0.000000]        .bss : 0xc06e28a4 - 0xc07e1950   (1021 kB)
+[    0.000000] SLUB: Genslabs=11, HWalign=64, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+[    0.000000] NR_IRQS:131
+[    0.000000] [GIC]zx29 GIC initialized.
+[    0.000000] ce_wclk=3250000, parent=main_clk_26m
+[    0.000000] cs_wclk=32768, parent=main_clk_32k
+[    0.000000] sched_clock: 31 bits at 32kHz, resolution 30517ns, wraps every 65535999ms
+[    0.000000] cd_wclk=26000000, parent=main_clk_26m
+[    0.000000] wt_wclk=32768, parent=main_clk_32k
+[    0.000000] zx297520v system timer initialized
+[    0.000000] console [ttyS1] enabled
+[    0.000000] [UART]register_console: zx29 console registered!
+[    0.000000] kmemleak: Kernel memory leak detector disabled
+[    0.258209] Calibrating delay loop... 1241.08 BogoMIPS (lpj=3102720)
+[    0.291046] pid_max: default: 32768 minimum: 301
+[    0.295776] Mount-cache hash table entries: 512
+[    0.300659] CPU: Testing write buffer coherency: ok
+[    0.305145] hw perfevents: no hardware support available
+[    0.310363] Setting up static identity map for 0x204bf030 - 0x204bf088
+[    0.319549] dummy:
+[    0.320526] NET: Registered protocol family 16
+[    0.325592] gpiochip_add: registered GPIOs 0 to 135 on device: zx29_gpio
+[    0.331298] [GPIO]create sysfs interface
+[    0.335174] [GPIO]zx29 GPIO initialized
+[    0.439941] buck3v3 on, wifi power up.
+[    0.444427] spi_register_board_info success,devices_num=0
+[    0.448394] wifi enable gpio success high(920u5 change)85
+[    0.453735] hw-breakpoint: found 5 (+1 reserved) breakpoint and 4 watchpoint registers.
+[    0.461730] hw-breakpoint: maximum watchpoint size is 8 bytes.
+[    0.500152] bio: create slab <bio-0> at 0
+[    0.506195] [DMA]zx297520v DMA initialized
+[    0.509643] SCSI subsystem initialized
+[    0.513366] [PMU] get boot_reason = 0 from 0xf8302bc0.
+[    0.533874] zx234290_PMU_regulator_init, BUCKFail_irq=118,LDOFail_irq=117
+[    0.541717] zx29_i2c zx29_i2c.0: i2c-0: ZX29 I2C adapter
+[    0.546264] zx29_i2c zx29_i2c.1: i2c-1: ZX29 I2C adapter
+[    0.551452] power zte_power: zte-power: zte_power_get_boot_reason: 1
+[    0.557189] power zte_power: zte-power: attr-battery-discharge[id-27] = 1
+[    0.563964] power zte_power: zte-power: string-percent-file[id-37] is '/etc_rw_mbb/ztembb/tsp_soc_file'
+[    0.573333] power zte_power: zte-power: string-rtc-device[id-38] is 'rtc0'
+[    0.580200] zte_bsp_netlink_register: module 0
+[    0.584594] power zte_power: zte-power: success to creat zte_power device
+[    0.592071] rpmsg: icp_probe actorID = 0, success!
+[    0.596679] [zxp] icp_wake_lock inited!
+[    0.600097] rpmsg: icp_probe actorID = 1, success!
+[    0.604980] zte_bsp_netlink done...
+[    0.609130] NET: Registered protocol family 8
+[    0.612701] NET: Registered protocol family 20
+[    0.617767] cfg80211: Calling CRDA to update world regulatory domain
+[    0.624450] Switching to clocksource zx29_ap_timer3
+[    0.630950] NET: Registered protocol family 2
+[    0.642425] IP route cache hash table entries: 1024 (order: 0, 4096 bytes)
+[    0.648254] TCP established hash table entries: 2048 (order: 2, 16384 bytes)
+[    0.654937] TCP bind hash table entries: 2048 (order: 1, 8192 bytes)
+[    0.661224] TCP: Hash tables configured (established 2048 bind 2048)
+[    0.667541] TCP: reno registered
+[    0.670745] UDP hash table entries: 256 (order: 0, 4096 bytes)
+[    0.676574] UDP-Lite hash table entries: 256 (order: 0, 4096 bytes)
+[    0.683013] NET: Registered protocol family 1
+[    0.688232] [xxx] softspinlock dev inited!
+[    0.702545] jffs2: version 2.2. (NAND) © 2001-2006 Red Hat, Inc.
+[    0.707824] msgmni has been set to 107
+[    0.712249] io scheduler noop registered
+[    0.714843] io scheduler deadline registered (default)
+[    0.721893] [zx29_uart_probe][2624]UART DMA is OPENED0
+[    0.725585] ttyS0 at MMIO 0x131000 (irq = 33) is a zx29_UART
+[    0.731506] TSP zx29 UART_0 probe OK
+[    0.734893] [zx29_uart_probe][2624]UART DMA is OPENED1
+[    0.739898] ttyS1 at MMIO 0x1408000 (irq = 108) is a zx29_UART
+[    0.745941] TSP zx29 UART_1 probe OK
+[    0.749420] TSP zx29 UART driver registered
+[    0.761810] brd: module loaded
+[    0.767730] loop: module loaded
+[    0.770782] Generic platform RAM MTD, (c) 2004 Simtec Electronics
+[    0.775695] spi_nand_probe------------
+[    0.779510] [SPIFC]dma ok addr is 23984480
+[    0.783294] gpio,clk ,spifc en ok
+[    0.786621] [SPIFC]request_irq ok
+[    0.789916] spi-nand-dt spi-nand-dt: maf = c8,dev = 11
+[    0.795013] spi_nand wakelock ok
+[    0.798248] [SPI-NAND]:  maf_id = 0xc8
+[    0.801971] [SPI-NAND]:  dev_id = 0x11
+[    0.805694] [SPI-NAND]:  maf_id = 0xc8
+[    0.809417] [SPI-NAND]:  dev_id = 0x11
+[    0.813140] [SPI-NAND]:  maf_id = 0xc8
+[    0.816894] [SPI-NAND]:  dev_id = 0x11
+[    0.820617] NAND device: Manufacturer ID: 0xc8, Chip ID: 0x11 (GigaDevice SPI-NAND 128MiB 1,8V 8-bit)
+[    0.829833] 1 NAND maxchips chips detected
+[    0.833923] [SPI-NAND][A0] = 0x0
+[    0.837127] [SPI-NAND][B0] = 0x10
+[    0.840698] Bad block table found at page 65472, version 0x01
+[    0.846496] Bad block table found at page 65408, version 0x01
+[    0.852203] 19 cmdlinepart partitions found on MTD device spi-nand
+[    0.858062] Creating 19 MTD partitions on "spi-nand":
+[    0.863098] 0x000000000000-0x000000080000 : "zloader"
+[    0.869415] 0x000000080000-0x000000180000 : "uboot"
+[    0.874114] 0x000000180000-0x000000200000 : "cpurpm"
+[    0.879058] 0x000000200000-0x000000300000 : "uboot-mirr"
+[    0.884338] 0x000000300000-0x000000400000 : "nvfac"
+[    0.889251] 0x000000400000-0x000000600000 : "nvro"
+[    0.893920] 0x000000600000-0x000000900000 : "nvrw"
+[    0.898651] 0x000000900000-0x000000a00000 : "fotaflag"
+[    0.903167] zftl[0] is fotaflag
+[    0.908233] 0x000000a00000-0x000001080000 : "cpuphy"
+[    0.912841] 0x000001080000-0x000001100000 : "sms"
+[    0.917541] 0x000001100000-0x000001900000 : "cpups"
+[    0.922424] 0x000001900000-0x000001e00000 : "cpuap"
+[    0.927276] 0x000001e00000-0x000002200000 : "cpfs"
+[    0.932098] 0x000002200000-0x000002700000 : "recovery"
+[    0.937225] 0x000002700000-0x000002c00000 : "recovery-kernel"
+[    0.942871] 0x000002c00000-0x000003400000 : "cdrom"
+[    0.947052] zftl[1] is cdrom
+[    0.958190] 0x000003400000-0x000005a00000 : "userdata"
+[    0.962982] 0x000005a00000-0x000005c00000 : "yaffs"
+[    0.967803] 0x000005c00000-0x000007d00000 : "zterw"
+[    0.973175] UBI: attaching mtd16 to ubi0
+[    0.975830] UBI: physical eraseblock size:   131072 bytes (128 KiB)
+[    0.981872] UBI: logical eraseblock size:    129024 bytes
+[    0.987274] UBI: smallest flash I/O unit:    2048
+[    0.991943] UBI: sub-page size:              512
+[    0.996551] UBI: VID header offset:          512 (aligned 512)
+[    1.002380] UBI: data offset:                2048
+[    1.066955] UBI: max. sequence number:       2
+[    1.075775] UBI: attached mtd16 to ubi0
+[    1.078125] UBI: MTD device name:            "userdata"
+[    1.083374] UBI: MTD device size:            38 MiB
+[    1.088195] UBI: number of good PEBs:        304
+[    1.092803] UBI: number of bad PEBs:         0
+[    1.097229] UBI: number of corrupted PEBs:   0
+[    1.101654] UBI: max. allowed volumes:       128
+[    1.106262] UBI: wear-leveling threshold:    4096
+[    1.110961] UBI: number of internal volumes: 1
+[    1.115386] UBI: number of user volumes:     1
+[    1.119812] UBI: available PEBs:             0
+[    1.124237] UBI: total number of reserved PEBs: 304
+[    1.129089] UBI: number of PEBs reserved for bad PEB handling: 9
+[    1.135101] UBI: max/mean erase counter: 1/0
+[    1.139343] UBI: image sequence number:  1922399296
+[    1.144256] UBI: background thread "ubi_bgt0d" started, PID 595
+[    1.150390] spi:zx29_spi_probe
+[    1.153228] spi:master =c3a4ec00
+[    1.156677] zx29_ssp zx29_ssp.0: setup for DMA on RX dma0chan5, TX dma0chan4
+[    1.163787] spi:zx29_spi_probe OK
+[    1.166961] tun: Universal TUN/TAP device driver, 1.6
+[    1.171844] tun: (C) 1999-2004 Max Krasnyansky <maxk@qualcomm.com>
+[    1.178192] PPP generic driver version 2.4.2
+[    1.182586] PPP BSD Compression module registered
+[    1.186950] PPP Deflate Compression module registered
+[    1.192413] PPP MPPE Compression module registered
+[    1.196777] NET: Registered protocol family 24
+[    1.201202] [rtw_suspend_lock_init] ENTRY
+[    1.205261] Realtek WLAN driver - version 1.7 (2020-02-07)
+[    1.210723] Adaptivity function - version 9.1
+[    1.215057]  wlan_index:0  1, 10,0x8179024c,0x0,0
+[    1.219970] ======== at_cdev_init
+[    1.222961] ======== at_cdev_init 1
+[    1.226440] ======== at_cdev_setup_cdev
+[    1.230590] usb,zx29_hsotg: version 3.10b 20-MAY-2013
+[    1.230590]
+[    1.442840] Core Release: 3.20a
+[    1.444519] Setting default values for core params
+[    1.451538] Using Descriptor DMA mode
+[    1.453704] Periodic Transfer Interrupt Enhancement - disabled
+[    1.459533] Multiprocessor Interrupt Enhancement - disabled
+[    1.465087] OTG VER PARAM: 0, OTG VER FLAG: 0
+[    1.469512] Dedicated Tx FIFOs mode
+[    1.479034] #####acm_function_init@808:ACM INIT
+[    1.483917]  gadget: Mass Storage Function, version: 2009/09/11
+[    1.488342]  gadget: Number of LUNs=2
+[    1.492004]  lun0: LUN: removable read only CD-ROM file: (no medium)
+[    1.498352]  lun1: LUN: removable file: (no medium)
+[    1.503234]  gadget: android_usb ready
+[    1.508422] usb,kset test init!
+[    1.508453]
+[    1.512145] input: zx29_keypad_int as /devices/virtual/input/input0
+[    1.519348] kpd request_irq irq_num=122.
+[    1.528839] kpd request_irq irq_num=83.
+[    1.538818] kpd request_irq irq_num=82.
+[    1.541412] sx9325 1-0028: sx9325_probe()
+[    1.545196] MSF sx9325_probe begin
+[    1.548583] MSF set gpio func 0MSF irq is 112
+[    1.553283] input: SX9325 Cap Touch as /devices/virtual/input/input1
+[    1.559509] sx9325 1-0028: registered with threaded irq (112)
+[    1.668823] MSF hw_init
+[    1.669952] i2c_zx29: NACK by slave 0x28, status 3
+[    1.674774] i2c_zx29: NACK by slave 0x28, status 3
+[    1.679534] i2c_zx29: NACK by slave 0x28, status 3
+[    1.684295] i2c_zx29: NACK by slave 0x28, status 3
+[    1.689086] i2c_zx29: NACK by slave 0x28, status 3
+[    1.693847] i2c_zx29: NACK by slave 0x28, status 3
+[    1.698638] i2c_zx29: NACK by slave 0x28, status 3
+[    1.703399] i2c_zx29: NACK by slave 0x28, status 3
+[    1.708190] i2c_zx29: NACK by slave 0x28, status 3
+[    1.712951] i2c_zx29: NACK by slave 0x28, status 3
+[    1.717742] i2c_zx29: NACK by slave 0x28, status 3
+[    1.722503] i2c_zx29: NACK by slave 0x28, status 3
+[    1.727294] i2c_zx29: NACK by slave 0x28, status 3
+[    1.732055] i2c_zx29: NACK by slave 0x28, status 3
+[    1.736846] i2c_zx29: NACK by slave 0x28, status 3
+[    1.741607] i2c_zx29: NACK by slave 0x28, status 3
+[    1.746398] i2c_zx29: NACK by slave 0x28, status 3
+[    1.751159] i2c_zx29: NACK by slave 0x28, status 3
+[    1.755950] i2c_zx29: NACK by slave 0x28, status 3
+[    1.760711] i2c_zx29: NACK by slave 0x28, status 3
+[    1.765502] i2c_zx29: NACK by slave 0x28, status 3
+[    1.770263] i2c_zx29: NACK by slave 0x28, status 3
+[    1.775054] i2c_zx29: NACK by slave 0x28, status 3
+[    1.779815] i2c_zx29: NACK by slave 0x28, status 3
+[    1.784606] i2c_zx29: NACK by slave 0x28, status 3
+[    1.789367] i2c_zx29: NACK by slave 0x28, status 3
+[    1.794158] i2c_zx29: NACK by slave 0x28, status 3
+[    1.798919] i2c_zx29: NACK by slave 0x28, status 3
+[    1.803680] i2c_zx29: NACK by slave 0x28, status 3
+[    1.808471] i2c_zx29: NACK by slave 0x28, status 3
+[    1.813262] i2c_zx29: NACK by slave 0x28, status 3
+[    1.818023] i2c_zx29: NACK by slave 0x28, status 3
+[    1.822814] i2c_zx29: NACK by slave 0x28, status 3
+[    1.827575] i2c_zx29: NACK by slave 0x28, status 3
+[    1.832366] i2c_zx29: NACK by slave 0x28, status 3
+[    1.837127] i2c_zx29: NACK by slave 0x28, status 3
+[    1.841918] i2c_zx29: NACK by slave 0x28, status 3
+[    1.846679] i2c_zx29: NACK by slave 0x28, status 3
+[    1.851470] i2c_zx29: NACK by slave 0x28, status 3
+[    1.856231] i2c_zx29: NACK by slave 0x28, status 3
+[    1.860992] i2c_zx29: NACK by slave 0x28, status 3
+[    1.865783] i2c_zx29: NACK by slave 0x28, status 3
+[    1.870544] i2c_zx29: NACK by slave 0x28, status 3
+[    1.875335] i2c_zx29: NACK by slave 0x28, status 3
+[    1.880096] i2c_zx29: NACK by slave 0x28, status 3
+[    1.884887] i2c_zx29: NACK by slave 0x28, status 3
+[    1.889648] i2c_zx29: NACK by slave 0x28, status 3
+[    1.894439] i2c_zx29: NACK by slave 0x28, status 3
+[    1.899200] i2c_zx29: NACK by slave 0x28, status 3
+[    1.903991] i2c_zx29: NACK by slave 0x28, status 3
+[    1.908752] i2c_zx29: NACK by slave 0x28, status 3
+[    2.013946] i2c_zx29: NACK by slave 0x28, status 3
+[    2.017333] i2c_zx29: NACK by slave 0x28, status 3
+[    2.022064] MSF sx9325_probe done
+[    2.031677] zx234290-rtc zx234290-rtc: rtc core: registered zx234290 as rtc0
+[    2.045989] i2c /dev entries driver
+[    2.048492] (NULL device *): zte-power: zte_usb_init() start
+[    2.053741] power zte_power: zte-power: attr-type-sync[id-30] = 2
+[    2.059753] zte_power_usb zte_power_usb.0: zte-power: zte_power_regulator_register: err -22
+[    2.068084] zte_power_usb zte_power_usb.0: zte-power: zte_usb_probe() done
+[    2.075347] [WDT]Watchdog Timer init OK.
+[    2.078979] [zx soft wdt]: Success to create AP 2 M0 icp channel 2 used by soft wdt!!!
+[    2.086822] rpmsg: actorID = 0 chID = 2 register callback success!
+[    2.092987] [zx soft wdt]: Success to register icp callback!!!
+[    2.099121] [zx soft wdt]: Success to register miscdev!!!
+[    2.104431] [zx soft wdt]: Success to create and run soft wdt thread!!!
+[    2.111053] cpuidle: using governor ladder
+[    2.115142] cpuidle: using governor menu
+[    2.119201] mmc,ZX29 Multimedia Card Interface Driver
+[    2.124206] dw_mci_pltfm_register: host0 step 1 finish, reg addr f8610000
+[    2.130920] zx29_sd zx29_sd.0: FIFO Threshold 0x1FF0000
+[    2.136047] zx29_sd zx29_sd.0: Version ID 210a
+[    2.140625] mmc,dw_mci_strengthen_driver, 3840:      clkcmd:0x38383858 data:0x38583838
+[    2.140625]
+[    2.149444] mmc,dw_mci_strengthen_driver, 3849:      clkcmd:0x3939395b data:0x38583939
+[    2.149444]
+[    2.158386] zx29_sd zx29_sd.0: DW MMC controller at irq 44, 32 bit host data width, 128 deep fifo
+[    2.167266] mmc0: no vmmc regulator found
+[    2.172637] zx29_sd zx29_sd.0: 1 slots initialized
+[    2.176666] warning! led_timer_irq_handler request irq error
+[    2.183685] logcatf_init
+[    2.184967] logcatk_init
+[    2.187255] cplog_init
+[    2.189727] mmc_host mmc0: Bus speed (slot 0) = 78000000Hz (slot req 400000Hz, actual 397959HZ div = 98)
+[    2.209869] [RPMSG] LOG_INIT
+[    2.211547] [xxx] efuse dev inited!
+[    2.215393] [check privateip]zte_check_privateip_module_init register start...
+[    2.222198] GACT probability NOT on
+[    2.225616] Failed to load ipt action
+[    2.230224] netem: version 1.3
+[    2.232330] u32 classifier
+[    2.235015]     Performance counters on
+[    2.238800]     input device check on
+[    2.242462]     Actions configured
+[    2.245849] Netfilter messages via NETLINK v0.30.
+[    2.250549] nfnl_acct: registering with nfnetlink.
+[    2.255340] nf_conntrack version 0.5.0 (856 buckets, 4832 max)
+[    2.264984] ctnetlink v0.93: registering with nfnetlink.
+[    2.268920] xt_time: kernel timezone is -0000
+[    2.273651] ip_tables: (C) 2000-2006 Netfilter Core Team
+[    2.278625] TCP: cubic registered
+[    2.281799] Initializing XFRM netlink socket
+[    2.286682] mmc0: card claims to support voltages below the defined range. These will be ignored.
+[    2.295501] NET: Registered protocol family 10
+[    2.300292] ip6_tables: (C) 2000-2006 Netfilter Core Team
+[    2.304870] IPv6 over IPv4 tunneling driver
+[    2.311340] NET: Registered protocol family 17
+[    2.314422] NET: Registered protocol family 15
+[    2.318847] Bridge firewalling registered
+[    2.322784] Ebtables v2.0 registered
+[    2.326354] 8021q: 802.1Q VLAN Support v1.8
+[    2.330780] [DEBUG] create sysfs interface OK.
+[    2.334960] [DEBUG] create test sysfs interface OK.
+[    2.339782] [DEBUG] create test clk sysfs interface OK.
+[    2.345886] kmemleak: Kernel memory leak detector initialized
+[    2.350769] rpmsg: actorID = 1 chID = 10 register callback success!
+[    2.356964] Ramdump server init success!
+[    2.376037] zx234290-rtc zx234290-rtc: setting system clock to 2000-01-01 18:31:29 UTC (946751489)
+[    2.383605] (NULL device *): zte-power: zte_battery_init
+[    2.389007] power zte_power: zte-power: string-scene-record-file[id-39] is '/etc_rw_mbb/ztembb/battery_scene_record'
+[    2.399383] power zte_power: zte-power: string-lcm-record-file[id-40] is '/etc_rw_mbb/ztembb/battery_lcm_record'
+[    2.409545] zte_power_battery zte_battery.0: zte-power: zte_battery_thermal_algorithm_init: 3
+[    2.419372] power zte_power: zte-power: power supply battery registered
+[    2.424682] zte_power_battery zte_battery.0: zte-power: zte_battery_probe() done
+[    2.433105] (NULL device *): zte-power: bq25601_charger_init
+[    2.437774] bq25601_charger_probe begin
+[    2.441589] power zte_power: zte-power: gpio-stat[id-6] 51, valid 1, dir 1, val 1
+[    2.449035] power zte_power: zte-power: gpio-pg[id-11] 49, valid 1, dir 1, val 1
+[    2.456420] power zte_power: zte-power: gpio-int[id-5] 50, valid 1, dir 1, val 1
+[    2.465515] power zte_power: zte-power: power supply charger registered
+[    2.470733] bq25601_init_usb_present_state start.
+[    2.475860] send ap usb out message
+[    2.478851] dwc_otg_usb_chg_remove,usb device has alreadly plugout
+[    2.485046] bq25601 1-006b: zte-power: zte_power_regulator_register: err -22
+[    2.492034] bq25601  irq= 80
+[    2.494995] mmc_host mmc0: Bus speed (slot 0) = 78000000Hz (slot req 78000000Hz, actual 78000000HZ div = 0)
+[    2.505187] bq25601 1-006b: zte-power: limit is 1200mA, Ichg value is 20
+[    2.511840] mmc0: new ultra high speed SDR50 SDIO card at address 0001
+[    2.518554] rtw_drv_init: sdio_func_id is "mmc0:0001:1"
+[    2.523071] =====>>INSIDE rtl8192cd_init_one <<=====
+[    2.528442] bq25601 1-006b: zte-power: bq25601_charger_probe done
+[    2.534088] bq25601_charger_probe end
+[    2.538116] HalAssociateNic OK
+[    2.543304] zte_power_usb zte_power_usb.0: zte-power: usb psy charge type = 4
+[    2.549255] start power seq
+[    2.552062] zte_bsp_netlink_send end...
+[    2.555694] power zte_power: zte-power: battery temperature = 25
+[    2.561676] zte_bsp_netlink_send end...
+[    2.565490] power zte_power: zte-power: battery charge status = 2
+[    2.574584] [SLP] Power/PM_INIT
+[    2.576324] [SLP] Power/SPM_INIT
+[    2.579620] [SLP] Power/PM_CONTEXT_INIT
+[    2.583526] [SLP] Power/WAKEUP_ADDRESS
+[    2.587371] [SLP] alloc size: 32 Bytes , total size 32 Bytes
+[    2.592987] [SLP] alloc size: 2592 Bytes , total size 2624 Bytes
+[    2.598999] [SLP] alloc size: 96 Bytes , total size 2720 Bytes
+[    2.604797] [SLP] alloc size: 32 Bytes , total size 2752 Bytes
+[    2.610626] [SLP] alloc size: 128 Bytes , total size 2880 Bytes
+[    2.616516] [SLP] alloc size: 64 Bytes , total size 2944 Bytes
+[    2.622344] [SLP] alloc size: 60 Bytes , total size 3004 Bytes
+[    2.628173] [SLP] alloc size: 64 Bytes , total size 3068 Bytes
+[    2.633972] [SLP] alloc size: 128 Bytes , total size 3196 Bytes
+[    2.639892] [SLP] alloc size: 128 Bytes , total size 3324 Bytes
+[    2.645782] [SLP] alloc size: 288 Bytes , total size 3612 Bytes
+[    2.651702] [SLP] alloc size: 64 Bytes , total size 3676 Bytes
+[    2.657501] [SLP] alloc size: 96 Bytes , total size 3772 Bytes
+[    2.663330] [SLP] alloc size: 128 Bytes , total size 3900 Bytes
+[    2.669219] [SLP] alloc size: 64 Bytes , total size 3964 Bytes
+[    2.675048] [SLP] alloc size: 352 Bytes , total size 4316 Bytes
+[    2.680969] [SLP] alloc size: 64 Bytes , total size 4380 Bytes
+[    2.686767] [SLP] alloc size: 32 Bytes , total size 4412 Bytes
+[    2.692596] [SLP] Power/PM_CONTEXT_INIT END
+[    2.696746] [SLP] Power/SRAM_INIT
+[    2.700134] [SLP] create sysfs interface
+[    2.704101] rpmsg: actorID = 1 chID = 1 register callback success!
+[    2.710235] [SLP] pm_mask_info=(       0)
+[    2.714324] [CPUIDLE] register device OK
+[    2.714324] ,
+[    2.719512] [CPUFREQ] zx29_cpufreq_init ok
+[    2.723846] [CPUFREQ] get_cpu_rate: 624000
+[    2.727935] [CPUFREQ] zx_cpufreq_cpu_init cpu: 0, target_freq:624000
+[    2.734436] [CPUFREQ] register cpufreq driver OK!
+[    2.738952] [TSC] create sysfs interface
+[    2.746002] InitPON OK
+[    2.761779] Ramdump maybe happens before collect server init done, please check!
+[    2.780303] alloc s_8192cd_MemLog success!(size 128000)
+[    2.784057] =====>>EXIT rtl8192cd_init_one <<=====
+[    2.788848] =====>>INSIDE rtl8192cd_init_one <<=====
+[    2.795257] =====>>EXIT rtl8192cd_init_one <<=====
+[    2.798553] =====>>INSIDE rtl8192cd_init_one <<=====
+[    2.803649] =====>>EXIT rtl8192cd_init_one <<=====
+[    2.808288] =====>>INSIDE rtl8192cd_init_one <<=====
+[    2.813323] =====>>EXIT rtl8192cd_init_one <<=====
+[    2.873138] UBIFS: mounted UBI device 0, volume 0, name "rootfs"
+[    2.877716] UBIFS: mounted read-only
+[    2.881256] UBIFS: file system size:   36255744 bytes (35406 KiB, 34 MiB, 281 LEBs)
+[    2.888885] UBIFS: journal size:       5160960 bytes (5040 KiB, 4 MiB, 40 LEBs)
+[    2.896179] UBIFS: media format:       w4/r0 (latest is w4/r0)
+[    2.902008] UBIFS: default compressor: zlib
+[    2.906158] UBIFS: reserved for root:  0 bytes (0 KiB)
+[    2.913360] new  ubifs_mount   40008411
+[    2.915863] VFS: Mounted root (ubifs filesystem) readonly on device 0:10.
+[    2.922790] Freeing init memory: 148K
+[    2.926239] Write protecting the kernel text section c0008000 - c0632000
+Bad inittab entry at line 3
+Bad inittab entry at line 4
+Starting mdevd...
+print zterw partition the first 4 bytes values
+0000000 4255 234[    3.320465] UBI: attaching mtd18 to ubi1
+[    3.324005] UBI: physical eraseblock size:   131072 bytes (128 KiB)
+[    3.330047] UBI: logical eraseblock size:    129024 bytes
+[    3.335388] UBI: smallest flash I/O unit:    2048
+[    3.340057] UBI: sub-page size:              512
+[    3.344665] UBI: VID header offset:          512 (aligned 512)
+[    3.350494] UBI: data offset:                2048
+9
+55424923
+zterw partition is not empty
+[    3.406707] UBI: max. sequence number:       4625
+[    3.428894] UBI: attached mtd18 to ubi1
+[    3.431304] UBI: MTD device name:            "zterw"
+[    3.436218] UBI: MTD device size:            33 MiB
+[    3.441070] UBI: number of good PEBs:        264
+[    3.445678] UBI: number of bad PEBs:         0
+[    3.450103] UBI: number of corrupted PEBs:   0
+[    3.454528] UBI: max. allowed volumes:       128
+[    3.459136] UBI: wear-leveling threshold:    4096
+[    3.463836] UBI: number of internal volumes: 1
+[    3.468261] UBI: number of user volumes:     3
+[    3.472686] UBI: available PEBs:             0
+[    3.477111] UBI: total number of reserved PEBs: 264
+[    3.481964] UBI: number of PEBs reserved for bad PEB handling: 6
+[    3.487976] UBI: max/mean erase counter: 22/18
+[    3.492401] UBI: image sequence number:  795464020
+[    3.497192] UBI: background thread "ubi_bgt1d" started, PID 841
+ubiattach zterw done
+zterw ubiattach success.
+[    3.535125] UBIFS: recovery needed
+[    3.658081] UBIFS: recovery completed
+[    3.660369] UBIFS: mounted UBI device 1, volume 0, name "etcrwfs"
+[    3.666351] UBIFS: file system size:   7870464 bytes (7686 KiB, 7 MiB, 61 LEBs)
+[    3.673645] UBIFS: journal size:       1806336 bytes (1764 KiB, 1 MiB, 14 LEBs)
+[    3.680938] UBIFS: media format:       w4/r0 (latest is w4/r0)
+[    3.686767] UBIFS: default compressor: zlib
+[    3.690917] UBIFS: reserved for root:  0 bytes (0 KiB)
+[    3.697723] new  ubifs_mount   40008410
+etc_rw_mbb fs check success.
+[    3.735961] UBIFS: recovery needed
+[    3.844360] UBIFS: recovery completed
+[    3.846679] UBIFS: mounted UBI device 1, volume 1, name "logfs"
+[    3.852478] UBIFS: file system size:   3999744 bytes (3906 KiB, 3 MiB, 31 LEBs)
+[    3.859771] UBIFS: journal size:       1419264 bytes (1386 KiB, 1 MiB, 11 LEBs)
+[    3.867065] UBIFS: media format:       w4/r0 (latest is w4/r0)
+[    3.872863] UBIFS: default compressor: zlib
+[    3.877044] UBIFS: reserved for root:  0 bytes (0 KiB)
+[    3.883483] new  ubifs_mount   40008410
+log fs check success.
+[    3.925109] UBIFS: recovery needed
+[    4.008819] UBIFS: recovery completed
+[    4.011138] UBIFS: mounted UBI device 1, volume 2, name "cachefs"
+[    4.017120] UBIFS: file system size:   16515072 bytes (16128 KiB, 15 MiB, 128 LEBs)
+[    4.024749] UBIFS: journal size:       2580480 bytes (2520 KiB, 2 MiB, 20 LEBs)
+[    4.032043] UBIFS: media format:       w4/r0 (latest is w4/r0)
+[    4.037872] UBIFS: default compressor: zlib
+[    4.042022] UBIFS: reserved for root:  0 bytes (0 KiB)
+[    4.048645] new  ubifs_mount   40008410
+cache fs check success.
+sh: write error: Device or resource busy
+mknod: /dev/tun: File exists
+cat: can't open '/cache/zte_fota/update_status': No such file or directory
+sh: 2: unknown operand
+cat: can't open '/securefs/default_parameter_user': No such file or directory
+nv_mtu: , mtu:
+get_update_status, read_update_status from /cache/zte_fota/update_status
+[nvserver]update_status open  error:No such file or directory
+cat: can't open '/securefs/default_parameter_user': No such file or directory
+nv_print_level: , print_level:
+mkdir: can't create directory '/usr/netlog': Read-only file system
+net.unix.max_dgram_qlen = 5000
+no mmi and wlan
+Set vFnSetCtrl end
+notify_atctl send /dev/ttyS0 0
+zte_drvcommng uart:0,no flow control
+drvcom begin to rcv msg from queue 65538.
+[    4.372955] Load cfg new driver..v2.0..
+[    4.375396] cfg init, drivers/cfg/cfg_param.c 574
+[usbCfgMng] main start
+[usbCfgMng]Creating usbCfgMng message queue success! MODULE_ID_USBCFGMNG=98307
+[usbCfgMng]usb_initUsbCfgMsg
+[usbCfgMng]usb_initUsbCfgMsg Register finish!!
+[usbCfgMng]  CDROMFlag:1,CDROMFlag[    4.405303]
+[    4.405303] download_store = 1
+Step2:2
+[usbCfgMng]usbcfg_browse_Partnum_ByPartname start!
+[usbCfgMng]usbcfg_browse_cdrom succeed! part_num=15[    4.419586] gs_open init_timer entry.
+[    4.423034] gs_open init_timer exit.
+
+Exist [    4.427337]
+[    4.428771] WPS_SSID=simcard_ro
+[    4.431884] 5750535f535349443d0073696d636172645f726f
+such file: /etc_rw_mbb/flagfile
+Quit usb setting
+[usbCfgMng]usbcfg_browse_cdrom g_usbcfg_cdrom_partition_name =/dev/zftl15
+[u[    4.448425]
+[    4.448455]  cfg init end, drivers/cfg/cfg_param.c 633
+[    4.454620] cfg init, drivers/cfg/cfg_param.c 574
+sbCfgMng[    4.460388] gs_open init_timer entry.
+[    4.463592] gs_open init_timer exit.
+] usb_NvGetUsbModeType ret = 0, tempModeType =user
+[usbCfgMng] usb_NvGetUsbModeType#### g_USBRefNV.nvModeType =1
+[usbCfgMng]  CDROMFlag:1,CDROMFlagStep2:2
+[usbCfgMng] usb_PlugInProc plugType = 0
+[    4.499359]
+[    4.499420]
+[    4.500915] 0000000000000000000000000000000000000000
+[    4.505798]
+[    4.505828]  cfg init end, drivers/cfg/cfg_param.c 633
+nv init complete!
+nvram_daemon: restore the tmp_parameter:/usr/zte/zte_conf/config/tmp_parameter
+[    4.603424] cfg save index:0
+/etc/rc: line 269: can't create /proc/sys/vm/drop-cache: nonexistent directory
+mount: mounting none on /proc/bus/usb failed: No such file or directory
+chown: unknown user/group root:root
+[    4.704650]
+[    4.704681] download_show ZTE download: ==========================
+zte_log_agent main begin
+zte_log_agent ma[    4.756134] cplog_open
+[    4.758026] cplog_open success
+in  g_log_dir
+init_app_log_device
+init_app_log_device fd 5
+init_app_log_device ret_applog 0
+zte_log_agent main init success
+[    5.444580] bq25601 1-006b: zte-power: zte_charger_set_over_voltage: 1
+[    5.449920] zte_bsp_netlink_send end...
+[    5.453460] power zte_power: zte-power: battery percent = 78
+[    5.461242] zte_bsp_netlink_send end...
+[    5.463592] power zte_power: zte-power: battery temperature = 27
+[    5.469665] zte_bsp_netlink_send end...
+[    5.473419] power zte_power: zte-power: battery health status = 1
+init_usblog_mode[    5.765350] gs_open init_timer entry.
+[    5.768493] gs_open init_timer exit.
+
+ZCAT_FACTORY_PATH : 3
+open usb_log_dev 8
+tty_set_port ok.
+rpmsg: ap port open fd = 8
+init_monitor_usb_enum hotplug_sock 9
+hb2017 begin recv usb msg
+[    9.494323] zte_power_battery zte_battery.0: zte-power: zte_power_reset_customer_mode
+[    9.500885] zte_bsp_netlink_send end...
+[    9.504486] power zte_power: zte-power: battery online
+[    9.509643] zte_bsp_netlink_send end...
+[    9.513427] power zte_power: zte-power: battery percent = 75
+hb2017 finish recv usb msg,result is 887,msg is change@/devices/virtual/power/zte_power/battery
+ZCAT_FACTORY_PATH : 3
+hb2017 begin recv usb msg
+Starting FOTA apps......!!
+/etc/rc: line 341: zte_watchdog: not found
+chmod: /sbin/app_monitor.sh: Read-only file system
+jdwp_service.c::jdwp_control_init():jdwp control socket started (8)
+[   11.828826] jffs2: Empty flash at 0x00000074 ends at 0x00000800
+
+
+BusyBox v1.21.0-uc0 (2021-12-10 14:56:01 CST) built-in shell (ash)
+Enter 'help' for a list of built-in commands.
+
+~ # [zte production server at] zte_production_at_proc! msgget start!
+[zte production at] zte_production_at_read_nv_item! name = modem_inner_version, value = BD_VODAFONEGEMF920U4V1.0.0B02
+not need set key_syslog_name syslog.conf
+[/logfs] exist
+good, using setted value[/logfs] as path
+Start syslog setting
+level=0
+[   12.072326] cfg save index:0
+[   12.081268]
+[   12.081268] g_read_only_partition_table:
+[   12.085235] offset=0x0, size=0x80000
+[   12.088745] offset=0x80000, size=0x100000
+[   12.092773] offset=0x200000, size=0x100000
+[   12.096832] offset=0x180000, size=0x80000
+[   12.100860] offset=0xa00000, size=0x680000
+[   12.104919] offset=0x1100000, size=0x800000
+[   12.109069] offset=0x1900000, size=0x500000
+[   12.113250] offset=0x1e00000, size=0x400000
+[   12.117431] offset=0x2200000, size=0x500000
+[   12.121582] offset=0x2700000, size=0x500000
+[   12.125762] offset=0x3400000, size=0x2600000
+[   12.130004] offset=0x2c00000, size=0x800000
+killall: syslogd: no process killed
+syslogd: number 0 is not in 1..8 range
+Please check if syslog running as you want
+  980 admin      0:00 grep -m 1 syslogd
+Failed to connect to non-global ctrl_ifname: wlan0  error: No such file or directory
+wpa_cli -i wlan0 log_level ERROR -B
+Starting ZTE FOTA apps......!!
+cannot bind 'tcp:5037'
+fotaflgforgateway is not exist
+UPDATE >> Enter updater!!!
+bridge_setup.sh: NO_DRIVER_UFI will check product type further
+bridge_setup.sh:the interface is not usb0 or ecm0
+bridge_setup.sh: begin to set bridge********
+bridge_setup.sh: setup bridge0 ...
+hb2017 finish recv usb msg,result is 150,msg is add@/devices/virtual/net/bridge0
+ZCAT_FACTORY_PATH : 3
+hb2017 begin recv usb msg
+UPDATE >> Enter power_fail_protection
+hb2017 finish recv usb msg,result is 133,msg is add@/devices/virtual/net/bridge0/queues/tx-0
+ZCAT_FACTORY_PATH : 3
+hb2017 begin recv usb msg
+[   12.597595] zte_bsp_netlink_recv: receive message from pid 1029
+[   12.602111] zte_bsp_netlink_recv: message[0] = 0
+[   12.606658] zte_bsp_netlink_recv: message[1] = 4
+[   12.611236] zte_bsp_netlink_recv: message[2] = 0
+[   12.615875] zte_bsp_netlink_send end...
+[   12.630401] power zte_power: zte-power: read percent 75, time 946751338 from file
+[   12.636413] zte_power_battery zte_battery.0: zte-power: zte_battery_set_property() set capacity to 75
+[   12.645660] power zte_power: zte-power: write 75 946751499 to file
+[   12.663543] zte_bsp_netlink_recv: receive message from pid 1029
+[   12.668060] zte_bsp_netlink_recv: message[0] = 2
+[   12.672607] zte_bsp_netlink_recv: message[1] = 4
+[   12.677215] zte_bsp_netlink_recv: message[2] = 0
+bridge_setup.sh: ifup usblan0 iface  ...
+ifconfig: SIOCGIFFLAGS: No such device
+bridge_setup.sh: add usblan0 to bridge ...
+brctl: iface usblan0: No such device
+bridge_setup.sh: done ...
+cat: can't open '/sys/devices/virtual/android_usb/android0/zte_usb_external_ethaddr': No such file or directory
+[   13.609649] zte_power_battery zte_battery.0: zte-power: zte_battery_revise_to_target: target 75, lower 72, upper 77
+[   15.407928] cfg save index:0
+[   15.522125] cfg save index:0
+[usbCfgMng][usbcfg_RecvMsgFromQueue]iRet : 20, pstMsg->src_id:ld,  pstMsg->usMsgCmd:ld
+[usbCfgMng][usbcfg_ProcMsg] msg:src_id = 0x1005,usMsgCmd = 0x00003512,usDataLen = 4,data =
+[usbCfgMng]usbcfg_Handle_Msg_UsbModeFastPowerOff enter
+[usbCfgMng]usbcfg_Handle_Msg_UsbModeFastPowerOff poweroff_state = 1
+[usbCfgMng]usbcfg_Handle_Msg_UsbModeFastPowerOff usbPlugtype = 0
+[usbCfgMng]usbcfg_Handle_Msg_UsbModeFastPowerOff fastpoweron flag invalid
+[   16.300262] zte set zte_rolling_led->cdev.brightness 2
+[   16.881134] device wlan0 entered promiscuous mode
+[   16.892608] ----->rtl8192cd_open
+[   16.902557] Miracle_debug:rtl8192cd_open--7026called
+[   16.906097] Miracle_debug:rtl8192cd_init_sw--2799called
+[   16.916229] Miracle_debug:rtl8192cd_init_sw--2859called
+[   16.925598] zte test the band regin is 3
+[   16.928131] Miracle_debug:rtl8192cd_init_sw--3961called
+[   17.062316]
+[   17.062347] 4
+[   17.064025] Miracle_debug:rtl8192cd_open--7047called
+[   17.068939] Miracle_debug:rtl8192cd_open--7054called
+[   17.092926] Miracle_debug:init_wifi_wakeup_gpio--690called
+[   17.097198] ----->rtl8192cd_init_hw_PCI
+[   17.105682] start power seq
+[   17.135833] InitPON OK
+[   17.139343] InitMAC OK
+[   17.140258]
+[   17.140258]
+[   17.140289] ************* Initialize MAC/PHY parameter *************
+[   17.149536] [MAC_REG_8192Emp]
+[   17.156829] [PHY_REG_8192Emp]
+[   17.181335] [PHY_REG_PG_8192Emp]
+[   17.183471] wlan-ioctl-err: error hex format!
+[   17.187500] wlan-ioctl-err: error hex format!
+[   17.191802] wlan-ioctl-err: error hex format!
+[   17.207641] wlan-ioctl-err: error hex format!
+[   17.213806] wlan-ioctl-err: error hex format!
+[   17.216735] wlan-ioctl-err: error hex format!
+[   17.221191] wlan-ioctl-err: error hex format!
+[   17.225372] wlan-ioctl-err: error hex format!
+[   17.229705] wlan-ioctl-err: error hex format!
+[   17.234161] wlan-ioctl-err: error hex format!
+[   17.238403] wlan-ioctl-err: error hex format!
+[   17.261260] wlan-ioctl-err: error hex format!
+[   17.279510] wlan-ioctl-err: error hex format!
+[   17.282440] wlan-ioctl-err: error hex format!
+[   17.286743] wlan-ioctl-err: error hex format!
+[   17.291168] wlan-ioctl-err: error hex format!
+[   17.315399] [AGC_TAB_8192ES]
+[   17.363433] [RadioA_8192ES]
+[   17.915985] [RadioB_8192ES]
+[   18.611175] InitDownload FW OK
+[   18.612854] [TxPowerTrack_AP]
+[   18.829956] zte_http_redirect: module license 'unspecified' taints kernel.
+[   18.835479] Disabling lock debugging due to kernel taint
+hb2017 finish recv usb msg,result is 103,msg is add@/module/zte_http_redirect
+ZCAT_FACTORY_PATH : 3
+hb2017 begin recv usb msg
+[   18.858306] [redirect]==========http_redirect start run==========
+[   18.863098] [redirect] g_web_redirect_gateway is 192.168.0.1
+[   18.868774] [redirect] g_web_redirect_domain is
+[   18.873443] [redirect] local domain is ufi.ztedevice.com
+[   18.878845] [redirect] g_each_mac_redirect_enable is 0
+[   18.947723] 8192E LCK done!!
+[   18.955780] rtl8192cd_init_hw_PCI----->
+[   18.958129] Miracle_debug:rtl8192cd_open--7201called
+[   18.974853] acli: start_ss_t ss_req:0 scanning:0 is_root:1
+[   18.979064] [rtw_lock_suspend] ENTRY
+[   18.998565] write RF 0 offset 0x55 val [0x00000],  read back [0x00000]
+[   19.003662] write RF 1 offset 0x55 val [0x20000],  read back [0x00004]
+[   19.010162] Miracle_debug:rtl8192cd_open--8153called
+[   19.015686] rtl8192cd_open----->
+[   19.018829] bridge0: port 1(wlan0) entered forwarding state
+[   19.023925] bridge0: port 1(wlan0) entered forwarding state
+[   19.120239] bridge0: port 1(wlan0) entered forwarding state
+[   19.380401] [redirect]redirect open for network off
+[   19.732788] [redirect]redirect open for network off
+hb2017 finish recv usb m[   20.681976] zte_check_privateip_module_init register start...
+[   20.687530] zte_check_privateip_module_init dev[wan1], ip[43200] ,netmask[16777215]
+sg,result is 107,msg is add@/module/zte_check_privateip
+ZCAT_FACTORY_PATH : 3
+hb2017 begin recv usb msg
+hb2017 finish recv usb msg,result is 101,msg is add@/module/nf_conntrack_sip
+ZCAT_FACTORY_PATH : 3
+hb2017 begin recv usb msg
+hb2017 finish recv usb msg,result is 89,msg is add@/module/nf_nat_sip
+ZCAT_FACTORY_PATH : 3
+hb2017 begin recv usb msg
+hb2017 finish recv usb msg,result is 95,msg is remove@/module/nf_nat_sip
+ZCAT_FACTORY_PATH : 3
+hb2017 begin recv usb msg
+hb2017 finish recv usb msg,result is 107,msg is remove@/module/nf_conntrack_sip
+ZCAT_FACTORY_PATH : 3
+hb2017 begin recv usb msg
+hb2017 finish recv usb msg,result is 101,msg is add@/module/nf_conntrack_sip
+ZCAT_FACTORY_PATH : 3
+hb2017 begin recv usb msg
+hb2017 finish recv usb msg,result is 89,msg is add@/module/nf_nat_sip
+ZCAT_FACTORY_PATH : 3
+hb2017 begin recv usb msg
+[   24.281677] ch 1: FA: 77
+[   24.282745] disable ch:1
+[   24.285278] ch 2: FA: 209
+[   24.287872] disable ch:2
+[   24.290405] ch 3: FA: 435
+[   24.292999] disable ch:3
+[   24.295532] ch 4: FA: 148
+[   24.298126] disable ch:4
+[   24.300628] ch 5: FA: 55
+[   24.303161] disable ch:5
+[   24.305694] ch 6: FA: 538
+[   24.308258] ch 7: FA: 244
+[   24.310882] ch 8: FA: 262
+[   24.313476] ch 9: FA: 154
+[   24.316101] ch 10: FA: 435
+[   24.318786] ch 11: FA: 495
+[   24.321472] ch 12: FA: 314
+[   24.324157] ch 13: FA: 433
+[   24.326873] ch 1: ap_count: 1, score: 0xffffffff N:42
+[   24.331970] ch 2: ap_count: 0, score: 0xffffffff
+[   24.336669] ch 3: ap_count: 0, score: 0xffffffff
+[   24.341369] ch 4: ap_count: 0, score: 0xffffffff
+[   24.346038] ch 5: ap_count: 0, score: 0xffffffff
+[   24.350738] ch 6: ap_count: 0, score: 538
+[   24.354827] ch 7: ap_count: 0, score: 244
+[   24.358886] ch 8: ap_count: 0, score: 262
+[   24.362976] ch 9: ap_count: 0, score: 154
+[   24.367065] ch 10: ap_count: 0, score: 435
+[   24.371215] ch 11: ap_count: 0, score: 495
+[   24.375396] ch 12: ap_count: 0, score: 0xffffffff
+[   24.380157] ch 13: ap_count: 0, score: 0xffffffff
+[   24.384948] !! Not found clean channel, use NHM algorithm
+[   24.390350] disable ch:1
+[   24.392852] nhm_cnt_1: H<-[   0   0   0   0   0   5   2   1   5 219]->L, score: -1
+[   24.400421] disable ch:2
+[   24.402923] nhm_cnt_2: H<-[   0   0   0   0   0   1   4   2  29 213]->L, score: -1
+[   24.410491] disable ch:3
+[   24.412994] nhm_cnt_3: H<-[   0   0   0   0   0   0   0   8  14 230]->L, score: -1
+[   24.420562] disable ch:4
+[   24.423065] nhm_cnt_4: H<-[   0   0   0   0   0   0   1  11   2 239]->L, score: -1
+[   24.430633] disable ch:5
+[   24.433135] nhm_cnt_5: H<-[   0   0   0   0   0   0   6   7   1 234]->L, score: -1
+[   24.440704] nhm_cnt_6: H<-[   0   0   0   0   0   0   0   6  10 238]->L, score: 322
+[   24.448333] nhm_cnt_7: H<-[   0   0   0   0   0   0   5   6   6 237]->L, score: 444
+[   24.455993] nhm_cnt_8: H<-[   0   0   0   0   0   0   2   6  15 226]->L, score: 379
+[   24.463653] nhm_cnt_9: H<-[   0   0   0   0   0   0   0   6  11 236]->L, score: 323
+[   24.471282] nhm_cnt_10: H<-[   0   0   0   0   0   0   0  19   7 228]->L, score: 420
+[   24.479003] nhm_cnt_11: H<-[   0   0   0   0   0   0   0   6   5 243]->L, score: 312
+[   24.486724] nhm_cnt_12: H<-[   0   0   0   0   0   0   0   6  10 238]->L, score: 322
+[   24.494445] nhm_cnt_13: H<-[   0   0   0   0   0   0   2  15   8 213]->L, score: 426
+[   24.502197] ch1:4294967295 ch2:4294967295 ch3:4294967295 ch4:4294967295 ch5:4294967295 ch6:322 ch7:444 ch8:379 ch9:323 ch10:420 ch11:312 ch12:4294967295 ch13:4294967295
+[   24.517272] groupScore, ch 6,10: 742
+[   24.520843] groupScore, ch 7,11: 756
+[   24.529174] Auto channel choose ch:6
+[   26.920684] cfg save index:0
+[   27.823974] cfg save index:0
+[   30.630859] offload total_len=717
+[   30.633087] Miracle_debug:rtw_sdio_suspend--141rtw_sdio_suspend ===>entry
+[   30.639526] Miracle_debug:rtw_sdio_suspend--148[rtw_sdio_suspend,148] total_assoc_num=0
+[   30.648193] gpio wakeup=ee
+[   30.652770] Miracle_debug:rtw_sdio_suspend--328rtw_sdio_suspend ===>exit
+[   30.658050] Miracle_debug:rtw_sdio_suspend--330pm relex
+[   30.663238] [rtw_unlock_suspend] ENTRY
+[   31.519958] cfg save index:0
+[   34.026824] zx234290 irq  handler:irq=77, INTR_A=0x80, INTR_B=0x08
+[   34.613708] cfg save index:0
+[   37.484558] cfg save index:0
+[   62.447937] cfg save index:0
+[   62.527740] zte_power_battery zte_battery.0: zte-power: zte_battery_power_scene_work() init_done = 1
+[   62.536773] zte_power_battery zte_battery.0: zte-power: zte_battery_lcm_work() init_done = 3
+[   62.543884] zte_power_battery zte_battery.0: zte-power: zte_battery_lcm_work() set lcm
+[   62.551757] zte_power_battery zte_battery.0: zte-power: zte_power_set_customer_mode: mode is 3
+[   62.583984] cfg save index:0
+[   62.634948] cfg save index:0
+[   62.666290] cfg save index:0
+[   62.893585] [redirect]redirect open for network off
+[   94.026794] zx234290 irq  handler:irq=77, INTR_A=0x80, INTR_B=0x08
+[  105.201385] [redirect]redirect open for network off
+[  122.660278] zte_power_battery zte_battery.0: zte-power: zte_battery_lcm_work() set lcm
+[  147.795928] zte_bsp_netlink_send end...
+[  147.798309] power zte_power: zte-power: battery percent = 74
+[  147.806091] power zte_power: zte-power: write 74 946751634 to file
+hb2017 finish recv usb msg,result is 887,msg is change@/devices/virtual/power/zte_power/battery
+ZCAT_FACTORY_PATH : 3
+hb2017 begin recv usb msg
+[  154.026794] zx234290 irq  handler:irq=77, INTR_A=0x80, INTR_B=0x08
+ls
+bin         etc         etc_rw_mbb  lib         mnt         sys         usr
+cache       etc_ro      firmware    logfs       proc        system      var
+dev         etc_rw      home        media       sbin        tmp         wifi
+~ # [  176.512420] zx234290 irq  handler:irq=77, INTR_A=0xa0, INTR_B=0x00
+[  176.530456] kpd down code=116 .
+[  178.057891] cfg save index:0
+[  178.430419] kpd up code=116.
+[  178.501037] ----->rtl8192cd_close
+[  178.502899] [rtw_lock_suspend] ENTRY
+[  178.506622] Miracle_debug:__rtw_sdio_resume--361__rtw_sdio_resume ===>entry
+[  178.513519] Miracle_debug:__rtw_sdio_resume--366[__rtw_sdio_resume,366]  HSS wait_pm_flags:4
+[  178.533020] Miracle_debug:__rtw_sdio_resume--461__rtw_sdio_resume ===>exit
+[  178.538452] ap offload wakeup
+[  178.555908] [rtw_dev_unload] cmd_thread[rtw_cmd_thread] bDriverStopped(1) OR bSurpriseRemoved(0)
+[  178.563507]  terminate
+[  178.565582] [rtw_dev_unload] xmit_threadrtw_xmit_thread: bDriverStopped(1) OR bSurpriseRemoved(0)
+[  178.574798]  terminate
+[  178.578155] Miracle_debug:free_wifi_wakeup_gpio--705called
+[  178.582275] rtl8192cd_close----->
+[  178.586395] bridge0: port 1(wlan0) entered disabled state
+[  182.820251] zte_power_battery zte_battery.0: zte-power: zte_battery_lcm_work() set lcm
+The system is going down NOW!
+[  184.133544] gs_close del_timer_sync entry.
+[  184.136688] gs_close del_timer_sync exit.
+[  184.142944] cplog_release
+[  184.144104] gs_close del_timer_sync entry.
+[  184.148315] gs_close del_timer_sync exit.
+[  184.153533] adb_release
+Sent SIGTERM to all processes
+[  184.166564] gs_close del_timer_sync entry.
+[  184.170349] gs_close del_timer_sync exit.
+Requesting system poweroff
+[  186.171234] [rtw_shutdown] close wlan0 ...
+[  186.174407] P
+<<< SimplySerial session terminated via CTRL-X >>>
