@@ -1,6 +1,9 @@
 # zte-mf920u
 A repository dedicated for the zte mf920u
 
+## UART
+
+WARNING: ONLY USE 1.8V on UART, most uart usb adapers only run on 3.3V which WILL destroy your device!!!
 
 ## PCB Images
 
